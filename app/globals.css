@@ -1,0 +1,247 @@
+@import "tailwindcss";
+
+@theme {
+  /* ground: deep maroon lacquer */
+  --color-maroon-900: oklch(0.18 0.072 18);
+  --color-maroon-800: oklch(0.24 0.095 18);
+  --color-maroon-700: oklch(0.31 0.115 19);
+  --color-maroon-600: oklch(0.38 0.128 20);
+
+  /* paper cards */
+  --color-paper: oklch(0.968 0.011 78);
+  --color-paper-2: oklch(0.925 0.016 60);
+
+  /* ink on paper */
+  --color-ink: oklch(0.21 0.055 20);
+  --color-ink-soft: oklch(0.44 0.038 20);
+
+  /* accents */
+  --color-rose: oklch(0.60 0.185 18);
+  --color-blush: oklch(0.82 0.072 20);
+  --color-gilt: oklch(0.80 0.096 78);
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-marquee: marquee 38s linear infinite;
+  @keyframes marquee {
+    to { transform: translateX(-100%); }
+  }
+
+  --animate-rise: rise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* ---- ambient: slow lacquer light moving behind everything ---------- */
+  --animate-drift-a: driftA 26s ease-in-out infinite alternate;
+  @keyframes driftA {
+    from { transform: translate3d(-6%, -4%, 0) scale(1); }
+    to   { transform: translate3d(8%, 6%, 0) scale(1.25); }
+  }
+
+  --animate-drift-b: driftB 34s ease-in-out infinite alternate;
+  @keyframes driftB {
+    from { transform: translate3d(7%, 5%, 0) scale(1.15); }
+    to   { transform: translate3d(-5%, -7%, 0) scale(0.9); }
+  }
+
+  /* ---- entrances ------------------------------------------------------ */
+  --animate-letter: letterIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  @keyframes letterIn {
+    from { opacity: 0; transform: translateY(0.42em) rotate(3deg); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  --animate-pop: pop 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  @keyframes pop {
+    from { opacity: 0; transform: scale(0.72); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  --animate-unfold: unfold 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
+  @keyframes unfold {
+    from { opacity: 0; transform: perspective(1400px) rotateX(14deg) translateY(38px) scale(0.96); }
+    to   { opacity: 1; transform: perspective(1400px) rotateX(0) translateY(0) scale(1); }
+  }
+
+  --animate-draw: draw 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  @keyframes draw {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  /* ---- a shine sweeping across the paper card ------------------------- */
+  --animate-sheen: sheen 2.1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+  @keyframes sheen {
+    from { transform: translateX(-130%) skewX(-18deg); }
+    to   { transform: translateX(260%) skewX(-18deg); }
+  }
+
+  /* ---- the yes moment ------------------------------------------------- */
+  --animate-bloom: bloom 1.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  @keyframes bloom {
+    from { opacity: 0.75; transform: scale(0.2); }
+    to   { opacity: 0; transform: scale(2.4); }
+  }
+
+  --animate-stamp: stamp 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  @keyframes stamp {
+    0%   { opacity: 0; transform: scale(2.6) rotate(-24deg); }
+    60%  { opacity: 1; }
+    100% { opacity: 1; transform: scale(1) rotate(-7deg); }
+  }
+
+  --animate-beat: beat 1.5s ease-in-out infinite;
+  @keyframes beat {
+    0%, 100% { transform: scale(1); }
+    14%      { transform: scale(1.13); }
+    28%      { transform: scale(1); }
+    42%      { transform: scale(1.08); }
+  }
+
+  --animate-twinkle: twinkle 2.6s ease-in-out infinite;
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.15; transform: scale(0.7); }
+    50%      { opacity: 1; transform: scale(1.15); }
+  }
+
+  --animate-confetti: confetti linear infinite;
+  @keyframes confetti {
+    0%   { transform: translateY(-14vh); opacity: 0; }
+    8%   { opacity: 1; }
+    92%  { opacity: 1; }
+    100% { transform: translateY(114vh); opacity: 0; }
+  }
+
+  --animate-sway: sway 2.8s ease-in-out infinite alternate;
+  @keyframes sway {
+    from { transform: translateX(-22px) rotate(-140deg); }
+    to   { transform: translateX(22px) rotate(160deg); }
+  }
+
+  --animate-float-up: floatUp linear infinite;
+  @keyframes floatUp {
+    0%   { transform: translateY(18vh) scale(0.6); opacity: 0; }
+    15%  { opacity: 0.8; }
+    85%  { opacity: 0.8; }
+    100% { transform: translateY(-108vh) scale(1.1); opacity: 0; }
+  }
+
+  --animate-breathe: breathe 3.4s ease-in-out infinite;
+  @keyframes breathe {
+    0%, 100% { box-shadow: 0 0 0 0 oklch(0.60 0.185 18 / 0.5); }
+    50%      { box-shadow: 0 0 0 22px oklch(0.60 0.185 18 / 0); }
+  }
+}
+
+/* next/font exposes its families as runtime vars on <body>, so these have to be
+   `inline` to resolve at the use site rather than being frozen at :root. */
+@theme inline {
+  --font-display: var(--font-bodoni), Georgia, serif;
+  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-maroon-900);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-rose);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-blush);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* the small tracked label that runs the media-kit grammar */
+  .kicker {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  .rule {
+    background-image: linear-gradient(
+      to right,
+      color-mix(in oklab, var(--color-blush) 45%, transparent),
+      transparent
+    );
+    height: 1px;
+  }
+
+  /* warm vignette so the maroon ground reads as lacquer, not flat fill */
+  .lacquer {
+    background:
+      radial-gradient(
+        120% 80% at 50% -10%,
+        var(--color-maroon-700) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        90% 60% at 90% 110%,
+        var(--color-maroon-800) 0%,
+        transparent 55%
+      ),
+      var(--color-maroon-900);
+  }
+
+  /* scroll reveal; the .in class is added by <Reveal> */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.9s var(--ease-out-quint),
+      transform 1.05s var(--ease-out-quint);
+    transition-delay: var(--d, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* slow push-in on a photo once it is on screen */
+  .kenburns img {
+    transition: transform 9s cubic-bezier(0.33, 0, 0.2, 1);
+  }
+  .kenburns.in img {
+    transform: scale(1.08);
+  }
+
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .kenburns.in img { transform: none !important; }
+}
