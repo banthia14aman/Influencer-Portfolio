@@ -5,7 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "check": "node scripts/check.mjs",
+    "new": "node scripts/new-creator.mjs",
+    "images": "node scripts/prep-images.mjs",
+    "prebuild": "node scripts/check.mjs"
   },
   "dependencies": {
     "motion": "^13.1.0",
@@ -18,6 +22,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
