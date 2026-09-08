@@ -75,7 +75,7 @@ export default function Index() {
                     </p>
                   </div>
                   <span className="font-display text-xl tabular-nums text-blush">
-                    {c.stats.followers.toLocaleString("en-IN")}
+                    {c.stats.followers.toLocaleString("en-US")}
                   </span>
                 </div>
               </Link>

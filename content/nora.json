@@ -1,0 +1,41 @@
+{
+  "slug": "nora",
+  "name": "Nora Vance",
+  "first": "Nora",
+  "last": "Vance",
+  "handle": "@noravance",
+  "line": "Fashion and beauty out of Los Angeles. Reels that sell without sounding like ads.",
+  "base": "Los Angeles, CA",
+  "email": "hello@noravance.example",
+  "sample": true,
+  "syncedAgo": "2 hours ago",
+  "stats": { "followers": 48200, "engagement": "5.8%", "avgReach": 62400, "avgSaves": 1240 },
+  "age": [["18 – 24", 44], ["25 – 34", 39], ["35 – 44", 12], ["45+", 5]],
+  "cities": [["Los Angeles", 22], ["New York", 14], ["Chicago", 8], ["Dallas", 5], ["Miami", 4]],
+  "glance": [["Women", "73%"], ["Men", "26%"], ["United States", "79% of audience"], ["Peak activity", "7–10pm ET"], ["Story completion", "74%"]],
+  "rates": [
+    ["Instagram Reel", "One 30–60s reel, 2 revisions", "$650"],
+    ["Story set", "Three frames, link sticker, 24h", "$250"],
+    ["Carousel post", "Up to 8 slides, copy included", "$450"],
+    ["Reel + stories bundle", "One reel, three stories", "$850"],
+    ["UGC, no posting", "Raw files, full usage rights", "$500"]
+  ],
+  "brands": ["Halden Skin", "Ardor Coffee", "Studio Fern", "Vellum Beauty", "Northmoor", "Casa Lume"],
+  "hero": "f01.jpg",
+  "heroCaption": "Top performing reel · 214k views",
+  "contactPhoto": "f07.jpg",
+  "photos": [
+    ["f01.jpg", "Reel · 214k views", "Malibu, CA", "Golden-hour beach walk, wide shot", "#8c2a24"],
+    ["f02.jpg", "Carousel · 9.1k saves", "Los Angeles, CA", "Studio flatlay of a skincare set", "#4a2630"],
+    ["f03.jpg", "Reel · 88k views", "New York, NY", "Get-ready-with-me in a hotel mirror", "#a8202c"],
+    ["f04.jpg", "Post · 6.4k likes", "Santa Fe, NM", "Courtyard architecture, arched doorway", "#5c3b2e"],
+    ["f05.jpg", "Reel · 156k views", "Los Angeles, CA", "Cafe table, iced coffee and a notebook", "#8c2a24"],
+    ["f06.jpg", "Carousel · 4.8k saves", "Los Angeles, CA", "Outfit grid, five looks", "#4a2630"],
+    ["f07.jpg", "Post · 7.2k likes", "Big Sur, CA", "Rooftop at dusk over the coast", "#a8202c"],
+    ["f08.jpg", "Reel · 61k views", "New York, NY", "Street market walk-and-talk", "#5c3b2e"],
+    ["f09.jpg", "Post · 5.5k likes", "Los Angeles, CA", "Product close-up on linen", "#8c2a24"],
+    ["f10.jpg", "Reel · 122k views", "Malibu, CA", "Sunrise swim, handheld", "#4a2630"],
+    ["f11.jpg", "Carousel · 3.9k saves", "Portland, OR", "Cafe interior and menu detail", "#a8202c"],
+    ["f12.jpg", "Post · 8.8k likes", "Santa Fe, NM", "Textile stall, colour study", "#5c3b2e"]
+  ]
+}

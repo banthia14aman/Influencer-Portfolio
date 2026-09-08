@@ -1,0 +1,204 @@
+{
+  "slug": "cole",
+  "name": "Cole Rhys",
+  "first": "Cole",
+  "last": "Rhys",
+  "handle": "@colerhyseats",
+  "line": "Food and travel out of Austin. Long lenses, small restaurants, no filters.",
+  "base": "Austin, TX",
+  "email": "bookings@colerhys.example",
+  "sample": true,
+  "syncedAgo": "40 minutes ago",
+  "stats": {
+    "followers": 112400,
+    "engagement": "4.1%",
+    "avgReach": 148000,
+    "avgSaves": 3960
+  },
+  "age": [
+    [
+      "18 – 24",
+      19
+    ],
+    [
+      "25 – 34",
+      53
+    ],
+    [
+      "35 – 44",
+      20
+    ],
+    [
+      "45+",
+      8
+    ]
+  ],
+  "cities": [
+    [
+      "Austin",
+      19
+    ],
+    [
+      "Dallas",
+      12
+    ],
+    [
+      "Houston",
+      9
+    ],
+    [
+      "New York",
+      8
+    ],
+    [
+      "Los Angeles",
+      6
+    ]
+  ],
+  "glance": [
+    [
+      "Men",
+      "57%"
+    ],
+    [
+      "Women",
+      "42%"
+    ],
+    [
+      "United States",
+      "84% of audience"
+    ],
+    [
+      "Peak activity",
+      "12–2pm CT"
+    ],
+    [
+      "Story completion",
+      "69%"
+    ]
+  ],
+  "rates": [
+    [
+      "Restaurant feature reel",
+      "Visit, shoot, edit, one reel",
+      "$1,600"
+    ],
+    [
+      "Story set",
+      "Five frames from the visit",
+      "$550"
+    ],
+    [
+      "Carousel review",
+      "Up to 10 slides",
+      "$950"
+    ],
+    [
+      "Travel day rate",
+      "Full day on location, all formats",
+      "$3,000"
+    ],
+    [
+      "UGC, no posting",
+      "Raw files, 6 month usage",
+      "$1,100"
+    ]
+  ],
+  "brands": [
+    "Kindling BBQ",
+    "Westline Hotels",
+    "Ridgeway Roasters",
+    "Coast & Co",
+    "The Depot",
+    "Blue Harbour"
+  ],
+  "hero": "f03.jpg",
+  "heroCaption": "Most saved reel · 9.4k saves",
+  "contactPhoto": "f08.jpg",
+  "photos": [
+    [
+      "f01.jpg",
+      "Reel · 402k views",
+      "Austin, TX",
+      "Kitchen pass at service, steam and motion",
+      "#5c3b2e"
+    ],
+    [
+      "f02.jpg",
+      "Post · 12.1k likes",
+      "Charleston, SC",
+      "Waterfront table at low tide",
+      "#8c2a24"
+    ],
+    [
+      "f03.jpg",
+      "Reel · 318k views",
+      "Austin, TX",
+      "Late-night taco trailer, griddle fire",
+      "#a8202c"
+    ],
+    [
+      "f04.jpg",
+      "Carousel · 7.4k saves",
+      "Portland, ME",
+      "Fish market, morning catch",
+      "#4a2630"
+    ],
+    [
+      "f05.jpg",
+      "Post · 9.8k likes",
+      "Austin, TX",
+      "Diner coffee and a newspaper",
+      "#5c3b2e"
+    ],
+    [
+      "f06.jpg",
+      "Reel · 244k views",
+      "Seattle, WA",
+      "Pour-over in slow motion",
+      "#8c2a24"
+    ],
+    [
+      "f07.jpg",
+      "Post · 6.9k likes",
+      "Big Sur, CA",
+      "Coastline from a rented convertible",
+      "#a8202c"
+    ],
+    [
+      "f08.jpg",
+      "Reel · 176k views",
+      "New Orleans, LA",
+      "Rooftop bar at golden hour",
+      "#4a2630"
+    ],
+    [
+      "f09.jpg",
+      "Carousel · 5.2k saves",
+      "Santa Fe, NM",
+      "Green chile plate, overhead",
+      "#5c3b2e"
+    ],
+    [
+      "f10.jpg",
+      "Post · 8.1k likes",
+      "Portland, ME",
+      "Harbour ferry at dawn",
+      "#8c2a24"
+    ],
+    [
+      "f11.jpg",
+      "Reel · 199k views",
+      "Austin, TX",
+      "Bakery at 5am, first trays out",
+      "#a8202c"
+    ],
+    [
+      "f12.jpg",
+      "Post · 7.7k likes",
+      "Charleston, SC",
+      "Sunset plate, wide shot",
+      "#4a2630"
+    ]
+  ]
+}

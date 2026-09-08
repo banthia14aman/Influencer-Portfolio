@@ -269,7 +269,7 @@ export default async function CreatorPage({ params }: Params) {
                   What it costs
                 </h2>
               </div>
-              <p className="kicker text-ink-soft">Exclusive of GST · 50% upfront</p>
+              <p className="kicker text-ink-soft">Excludes taxes · 50% upfront</p>
             </div>
 
             <dl className="mt-10 border-t border-ink/15">
