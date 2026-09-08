@@ -230,7 +230,13 @@ export function CountUp({
     // number forever. On a media kit a wrong follower count is worse than no
     // animation, so a timer (throttled, but it still fires) snaps to the real
     // value no matter what the frame loop did.
-    const guard = setTimeout(() => setN(to), duration + 500);
+    const guard = setTimeout(() => {
+      setN(to);
+      // ...and write the node directly. If React defers the commit (its
+      // scheduler can stall in a background tab too) the state update alone
+      // is not enough, and the visible text is what actually matters here.
+      if (ref.current) ref.current.textContent = to.toLocaleString("en-IN");
+    }, duration + 500);
 
     return () => {
       cancelAnimationFrame(raf);
