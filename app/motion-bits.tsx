@@ -214,34 +214,23 @@ export function CountUp({
     if (!seen) return;
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    let raf = 0;
-    const start = performance.now();
-    const tick = (now: number) => {
-      const t = Math.min((now - start) / duration, 1);
-      // ease-out-quint
-      setN(Math.round(to * (1 - Math.pow(1 - t, 5))));
-      if (t < 1) raf = requestAnimationFrame(tick);
-    };
-    setN(0);
-    raf = requestAnimationFrame(tick);
+    // Start from the REAL number and only drop to zero once a frame has
+    // actually been delivered. requestAnimationFrame is suspended entirely in
+    // a hidden or throttled tab, so any design that zeroes the value first and
+    // counts up afterwards can strand a wrong follower count on screen. Here
+    // the worst case is simply no animation, which is the correct number.
+    let raf = requestAnimationFrame((first) => {
+      setN(0);
+      const tick = (now: number) => {
+        const t = Math.min((now - first) / duration, 1);
+        // ease-out-quint
+        setN(Math.round(to * (1 - Math.pow(1 - t, 5))));
+        if (t < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    });
 
-    // Correctness guard. requestAnimationFrame is suspended entirely in a
-    // hidden or throttled tab, which would strand the counter at a wrong
-    // number forever. On a media kit a wrong follower count is worse than no
-    // animation, so a timer (throttled, but it still fires) snaps to the real
-    // value no matter what the frame loop did.
-    const guard = setTimeout(() => {
-      setN(to);
-      // ...and write the node directly. If React defers the commit (its
-      // scheduler can stall in a background tab too) the state update alone
-      // is not enough, and the visible text is what actually matters here.
-      if (ref.current) ref.current.textContent = to.toLocaleString("en-IN");
-    }, duration + 500);
-
-    return () => {
-      cancelAnimationFrame(raf);
-      clearTimeout(guard);
-    };
+    return () => cancelAnimationFrame(raf);
   }, [seen, to, duration]);
 
   return (
