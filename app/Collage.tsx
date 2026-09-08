@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { photos } from "./photos";
+import type { Photo } from "./types";
 
 /**
  * Scattered editorial collage. Desktop places frames on a percentage canvas so
@@ -33,7 +33,7 @@ const slots: Slot[] = [
   { i: 8, left: "0%", top: "64%", width: "18%", rotate: 3, depth: 0.55, z: 18 },
 ];
 
-export default function Collage() {
+export default function Collage({ photos }: { photos: Photo[] }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -52,6 +52,7 @@ export default function Collage() {
           <Frame
             key={s.i}
             slot={s}
+            photo={photos[s.i]}
             progress={scrollYProgress}
             reduced={!!reduced}
           />
@@ -85,14 +86,15 @@ export default function Collage() {
 
 function Frame({
   slot,
+  photo: p,
   progress,
   reduced,
 }: {
   slot: Slot;
+  photo: Photo;
   progress: ReturnType<typeof useScroll>["scrollYProgress"];
   reduced: boolean;
 }) {
-  const p = photos[slot.i];
   const drift = reduced ? 0 : 90 * slot.depth;
   const y = useTransform(progress, [0, 1], [drift, -drift]);
 

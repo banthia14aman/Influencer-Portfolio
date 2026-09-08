@@ -3,15 +3,15 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { photos } from "./photos";
+import type { Photo } from "./types";
 
-export default function Gallery() {
+export default function Gallery({ photos }: { photos: Photo[] }) {
   const [open, setOpen] = useState<number | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
 
   const move = useCallback(
     (step: number) => setOpen((i) => (i === null ? i : (i + step + photos.length) % photos.length)),
-    [],
+    [photos.length],
   );
 
   useEffect(() => {
