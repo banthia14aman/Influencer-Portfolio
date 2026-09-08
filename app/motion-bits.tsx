@@ -224,7 +224,18 @@ export function CountUp({
     };
     setN(0);
     raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+
+    // Correctness guard. requestAnimationFrame is suspended entirely in a
+    // hidden or throttled tab, which would strand the counter at a wrong
+    // number forever. On a media kit a wrong follower count is worse than no
+    // animation, so a timer (throttled, but it still fires) snaps to the real
+    // value no matter what the frame loop did.
+    const guard = setTimeout(() => setN(to), duration + 500);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(guard);
+    };
   }, [seen, to, duration]);
 
   return (
