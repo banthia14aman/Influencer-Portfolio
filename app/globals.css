@@ -224,6 +224,20 @@
     transform: scale(1.08);
   }
 
+
+  /* one consistent grade across mixed source photography, so a set shot by
+     different people on different days still reads as one art direction */
+  .artdirected img {
+    filter: saturate(0.86) contrast(1.05) sepia(0.06);
+  }
+
+  /* horizontal bar for the audience breakdowns */
+  .bar {
+    transform-origin: left;
+    transition: transform 1.1s var(--ease-out-quint);
+    transition-delay: var(--d, 0ms);
+  }
+
   .grain::after {
     content: "";
     position: absolute;

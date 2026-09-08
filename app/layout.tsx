@@ -15,10 +15,9 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "A message",
-  description: "",
-  // Not for search engines. This page is for one person who has the link.
-  robots: { index: false, follow: false },
+  title: "Aanya Rao — Creator Media Kit (Sample)",
+  description:
+    "Sample creator media kit: verified audience data, recent work, and a rate card. Fictional creator, illustrative figures.",
 };
 
 export default function RootLayout({

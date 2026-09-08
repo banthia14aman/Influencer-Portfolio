@@ -138,6 +138,38 @@ export function SplitLine({
   );
 }
 
+/** Labelled percentage bar that fills when scrolled into view. */
+export function Bar({
+  label,
+  value,
+  delay = 0,
+}: {
+  label: string;
+  value: number;
+  delay?: number;
+}) {
+  const { ref, seen } = useInView<HTMLDivElement>();
+  return (
+    <div ref={ref}>
+      <div className="flex items-baseline justify-between gap-4">
+        <span className="text-ink-soft">{label}</span>
+        <span className="font-display text-lg tabular-nums">{value}%</span>
+      </div>
+      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-ink/10">
+        <div
+          className="bar h-full rounded-full bg-rose"
+          style={
+            {
+              "--d": `${delay}ms`,
+              transform: `scaleX(${seen ? value / 100 : 0})`,
+            } as CSSProperties
+          }
+        />
+      </div>
+    </div>
+  );
+}
+
 /** Hairline reading-progress bar pinned to the top of the page. */
 export function ScrollProgress() {
   const [p, setP] = useState(0);
