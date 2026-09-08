@@ -9,7 +9,8 @@
     "check": "node scripts/check.mjs",
     "new": "node scripts/new-creator.mjs",
     "images": "node scripts/prep-images.mjs",
-    "prebuild": "node scripts/check.mjs"
+    "prebuild": "node scripts/check.mjs",
+    "outreach": "node scripts/outreach.mjs"
   },
   "dependencies": {
     "motion": "^13.1.0",

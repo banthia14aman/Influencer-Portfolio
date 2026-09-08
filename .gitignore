@@ -46,3 +46,6 @@ CLAUDE.md
 
 # local agent settings
 .claude/
+
+# prospect list is real people; keep it local
+outreach/prospects.csv
